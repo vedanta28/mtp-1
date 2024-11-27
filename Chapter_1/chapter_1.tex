@@ -1,0 +1,71 @@
+
+\chapter{Introduction}
+\graphicspath{{Chapter_1/Vector/}{Chapter_1/}}
+
+
+Cyber-physical systems (CPSs) in the context of Underwater Unmanned Vehicles (UUVs) incorporate distributed embedded controllers that manage various physical processes critical to underwater operations \cite{lee2008cyber}. These systems have become an integral part of modern maritime applications, such as underwater exploration, environmental monitoring, military reconnaissance, and offshore infrastructure inspection. The security of CPSs controlling UUVs has emerged as a significant concern due to the critical nature of their applications. As these systems grow increasingly complex and interconnected, they become more susceptible to sophisticated cyberattacks \cite{loukas2015cyber,humayed2017cyber}.
+
+In cyber-physical security attacks targeting UUVs, remote attackers can gain unauthorized control over the vehicle, interfere with its physical processes, and potentially cause catastrophic damage, including the loss of sensitive data, destruction of assets, or even risks to human life. For instance, malicious attacks on UUVs used in defense operations could lead to compromised missions or disruption of naval fleets. Recently, there were massive cyber attacks on Iran's nuclear facilities and government agencies\cite{ET2024Cyberattack}. Literature highlights notable CPS attacks, such as the Stuxnet worm damaging Iranian centrifuges \cite{langner2013kill}, the Maroochy Shire Water Services attack \cite{slay2007lessons}, and the German Steel Mill attack \cite{lee2014german}. Similarly, cyberattacks on autonomous drones and underwater vehicles have been documented, emphasizing the growing threat landscape for UUV operations \cite{yaacoub2020security}.
+
+To address these challenges, formal runtime enforcement techniques\cite{enforceablesecpol,FalconeMFR11,RuntimeNonSafety,FMSD} have been proposed as reliable mechanisms for mitigating security concerns in CPSs, including UUVs \cite{ngo2015runtime,ligatti2009run,pearce2019securing}. The research domain known as runtime verification (RV)\cite{LeuckerS08jlap} focuses on dynamically verifying a set of desirable policies during the execution of a ``black-box'' system. An RV monitor observes the system's execution trace without interfering and determines whether it satisfies or violates specific policies.
+
+Runtime enforcement (RE), an active counterpart to passive runtime verification, provides a mechanism to guarantee the adherence to desired policies during system execution. In RE mechanisms, an enforcer is designed to monitor a black-box system and take corrective actions when policy violations are detected. For UUVs, such actions are critical for ensuring mission safety and security. Evasive measures include blocking harmful actions \cite{enforceablesecpol}, modifying input sequences by suppressing or adding actions \cite{RuntimeNonSafety}, or buffering inputs until they can be safely executed \cite{FalconeMFR11,FMSD}. These techniques are particularly relevant for UUVs operating in dynamic and unpredictable underwater environments, where maintaining system safety and security is paramount.
+
+% \begin{figure}
+% \begin{tikzpicture}[->,shorten >=1pt,auto,node distance=2.5cm,semithick,initial where=left]
+
+% \tikzstyle{every node}=[font=\small]
+
+% \tikzstyle{good state}=[circle,thick,draw=blue!75,fill=blue!20,minimum size=5mm,accepting]
+% \tikzstyle{bad state}=[circle,thick,draw=red!75,fill=red!20,minimum size=3mm]
+% \tikzstyle{dead state}=[rectangle,thick,draw=red!75,fill=red!20,minimum size=5mm]
+
+% \node[initial,good state] (l0) {$l_0$};
+% \node[good state]         (l1) [right=3 of l0] {$l_1$}; %[right of=l0] {$l_1$};
+% \node[bad state]        (l2) [below=1cm of l1] {$l_2$};
+
+% \path (l0) edge node [align=center]  {$ A_{G_1} $ and ($ b_1 $ and $ c_1 $) :\\ $ a_1=1 $ }( l1)
+% edge [loop above] node [align=center] {$ B_{G_1} $: $ b_1=1 $\\$C_{G_1}$: $ c_1=1 $}(l0)  
+% edge [loop below] node [align=center] {$ \Sigma \setminus \{A_{G_1}, B_{G_1}, C_{G_1}\} $}(l0)  
+% edge [bend right=20] node [align=center] [anchor=south east, yshift=-40pt, xshift=40pt] {$ A_{G_1} $ and ($ !b_1 $ or $ !c_1$):\\ $ A_{G_1}=0$;}(l2)          
+
+% (l1) edge  [loop right] node {$ A_{G_1} $} (l1)
+% edge node [align=center] {($ B_{G_1}$: $ B_{G_1}=0$)  or\\ ($ C_{G_1} $: $ C_{G_1}=0$)} (l2)
+% edge [loop above] node [align=center] {$ \Sigma \setminus \{A_{G_1}, B_{G_1}, C_{G_1}\} $}(l0)
+
+% (l2) edge [loop right] node {$\Sigma$} (l2);
+
+% \end{tikzpicture}
+% \captionof{figure}{VDTA specifying the constraint: ``\textit{Peer A can undertake a research project only after it has been approved by peer \{B, C\}}".}
+% \label{fig:vdta}
+% \end{figure}
+
+
+%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%
+%%%%%% Chapter 1 Section 1
+%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%
+\section{Literature Survey}
+\rhead{Literature Survey}
+\label{LiteratureSurvey}
+
+Runtime verifiers are extensively used in underwater drone systems to ensure operational accuracy and detect malicious attacks. For example, similar to the Argus framework \cite{adepu2016argus}, external intelligent controllers can monitor the physical processes of underwater drones, enforcing policies such as depth, velocity, and collision avoidance based on operational invariants. Alternatively, runtime verification can be embedded directly within controllers \cite{adepu2017design}, enabling real-time detection and reporting of anomalies or rule violations.
+
+Specific cyberattacks on underwater drones include jamming, injection, and data alteration. To counter such threats, various runtime enforcement (RE) mechanisms have been proposed. For instance, Baird et al. \cite{baird2022runtime} modeled these attacks in a simulated drone system and developed runtime enforcers. Additionally, resilient control methods, such as those by Sun et al. \cite{sun2019resilient}, use dual-mode algorithms to counter denial-of-service (DoS) attacks in CPS environments.
+
+Traditional RE approaches (e.g., \cite{FalconeMFR11,RuntimeNonSafety}) rely on buffering or editing event sequences but are less suitable for reactive systems like underwater drones, where actions must occur instantaneously. Recent frameworks such as shields \cite{BloemKKW15,spin17} allow for bi-directional enforcement by transforming outputs dynamically while maintaining system reactivity.
+
+Our research builds on these principles, proposing a compositional RE framework for underwater drones. This approach allows enforcers to be incrementally added in series, enabling seamless integration of new security policies as threats evolve, without disrupting the existing system. This compositionality ensures flexibility and adaptability in securing underwater drones against emerging challenges.
+
+\section{Motivation}
+\rhead{Motivation}
+\label{Motivation}
+
+In practice, runtime security policies for underwater drones evolve over time as cyberattacks emerge and software systems grow more complex. Understanding the secured and unsecured behaviors of such systems also evolves with advancements in their applications. Underwater drones, deployed in diverse areas such as ocean exploration, environmental monitoring, and military surveillance, often require new and more sophisticated security policies alongside existing ones. Ensuring the security of these systems is inherently incremental: as new threats are identified, new security measures and patches are implemented to address them.
+
+Consider an underwater drone swarm as an example of a cyber-physical system (CPS). These drones operate with distributed controllers that manage their physical processes, such as depth, orientation, and velocity. They are frequently employed to monitor marine ecosystems, detect underwater anomalies, and transport goods in aquatic environments. Each drone operates within specific underwater zones and must adhere to restrictions in spatial movement to avoid collisions, boundary violations, or excessive energy consumption. However, the increasing use of underwater drones has also introduced new security vulnerabilities, exposing them to cyberattacks such as spoofing, jamming, and unauthorized access. Research has highlighted the necessity of augmenting existing security frameworks with more robust policies to protect against such threats.
+
+Incremental enforcement of security policies becomes essential in this context, especially as new challenges or attack vectors emerge. Instead of synthesizing a monolithic enforcer from scratch for every new policy, incremental enforcement allows for the addition of new policies without altering or revalidating the existing ones. This approach is particularly relevant when the underlying system is designed to handle dynamic, evolving environments, as is often the case with underwater drones. Monolithic enforcement methods face significant drawbacks, including high costs of redevelopment, re-certification, and risks of disrupting previously concealed or secret policies. These issues underscore the importance of designing enforcers capable of incorporating new policies without requiring knowledge of previously enforced ones.
+
+This work focuses on studying incremental enforcement mechanisms for underwater drones, utilizing approaches like those proposed in prior research (e.g., \cite{spin17, 10047915}), which are suitable for reactive CPS systems. In this context, the underwater drones are modeled as synchronous reactive systems. These systems continuously interact with their environment, with execution consisting of steps where the system reads inputs, performs reactions, and computes outputs. Such modeling ensures that new security policies can be incrementally added and enforced without compromising the system's overall integrity or performance.

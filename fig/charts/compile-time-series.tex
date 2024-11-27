@@ -1,0 +1,108 @@
+\begin{tikzpicture}
+	\begin{axis}[
+		%ybar,
+		%bar width=2mm,
+		width=(\linewidth*3/5)-10mm,
+		title={Series Compile Time},
+		xlabel={Number of Policies},
+		height=6cm,
+		legend style={
+			at={(1.05,0.5)},
+			anchor=west,
+		},
+		ylabel={Average Compile Time (s)},
+		ymin=0,
+		ymax=1.4,
+		%symbolic x coords={1, 2, 3, 4, 5},
+		xtick={1,2,3,4,5,6,7,8,9},
+		ytick={0, 0.4, 0.8, 1.2, 1.6}
+		]
+		
+		% Series O0
+		\addplot[
+		graphFirst,
+		] coordinates {
+			(1, 0.514)
+			(2, 0.535)
+			(3, 0.646)
+			(4, 0.699)
+			(5, 0.856)
+			(6, 0.933)
+			(7, 0.985)
+			(8, 1.077)
+			(9, 1.086)
+		};
+		
+		% Series O1
+		\addplot[
+		graphSecond,
+		] coordinates {
+			(1, .540333333)
+			(2, .567)
+			(3, .721)
+			(4, .769)
+			(5, .815)
+			(6, 0.858)
+			(7, 0.911)
+			(8, 0.966)
+			(9, 1.203)
+		};
+		
+		% Series O2
+		\addplot[
+		graphThird,
+		] coordinates {
+			(1, .546666667)
+			(2, .636)
+			(3, .700)
+			(4, .737)
+			(5, .843)
+			(6, 1.000)
+			(7, 1.061)
+			(8, 1.249)
+			(9, 1.241)
+		};
+		
+		% Series O3
+		\addplot[
+		graphFourth,
+		] coordinates {
+			(1, .579)
+			(2, .660333333)
+			(3, .731)
+			(4, .740)
+			(5, .900)
+			(6, 0.982)
+			(7, 1.090)
+			(8, 1.258)
+			(9, 1.308)
+		};
+		
+		% Series Os
+		\addplot[
+		graphFifth,
+		] coordinates {
+			(1, .537)
+			(2, .647666667)
+			(3, .656)
+			(4, .739)
+			(5, .902)
+			(6, 0.931)
+			(7, 1.005)
+			(8, 1.194)
+			(9, 1.321)
+		};
+		
+		%		% This Work (CPSC)
+		%		\addplot[
+		%			graphFifth, fill=graphFifth
+		%		] coordinates {
+			%			(Accuracy, 92.5)
+			%			(Sensitivty, 92)
+			%			(Specificity, 93)
+			%		};
+		
+		\legend{O0, O1, O2, O3, Os}
+		
+	\end{axis}
+\end{tikzpicture}

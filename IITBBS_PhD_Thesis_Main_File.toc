@@ -1,0 +1,39 @@
+\contentsline {chapter}{Certification of Approval}{i}{Doc-Start}%
+\contentsline {chapter}{Certificate}{ii}{Doc-Start}%
+\contentsline {chapter}{Declaration}{iii}{Doc-Start}%
+\contentsline {chapter}{Acknowledgments}{iv}{Item.6}%
+\contentsline {chapter}{Abstract}{v}{chapter*.1}%
+\contentsline {chapter}{List of Figures}{viii}{chapter*.2}%
+\contentsline {chapter}{List of Tables}{ix}{chapter*.3}%
+\contentsline {chapter}{List of Abbreviations}{x}{chapter*.4}%
+\contentsline {chapter}{List of Symbols}{xi}{table.0.1}%
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Literature Survey}{2}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Motivation}{3}{section.1.2}%
+\contentsline {chapter}{\numberline {2}Runtime Enforcement Framework}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Preliminaries and Notation}{5}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Edit Functions}{9}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Runtime Enforcement for Synchronous Programs}{10}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}Runtime Enforcement Framework for Policies Defined as SA}{13}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Monolithic and Incremental Schemes for Enforcing Multiple Policies}{16}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Monolithic security enforcement}{17}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Incremental composition of security enforcers}{20}{subsection.2.3.2}%
+\contentsline {section}{\numberline {2.4}Revisiting Incremental Security Enforcement Scheme}{24}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Select Functions}{24}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Incremental Enforcement Scheme using Select Functions}{26}{subsection.2.4.2}%
+\contentsline {chapter}{\numberline {3}Problem Statement}{29}{chapter.3}%
+\contentsline {section}{\numberline {3.1}DARP: Divide Areas Algorithm for Optimal Multi-Robot Coverage Path Planning}{29}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Drone Swarms}{32}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Attack On Drones}{35}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Mitigation with Enforcement}{36}{section.3.4}%
+\contentsline {subsubsection}{Policy $\varphi _{1}$ mitigating attack A1, \emph {Boundary Breach}}{38}{section*.25}%
+\contentsline {subsubsection}{Policy $\varphi _{2}$ mitigating attack A2, \emph {Overwhelm Inputs}}{39}{section*.27}%
+\contentsline {subsubsection}{Policy $\varphi _{3}$ mitigating attack A3, \emph {Block Control Signals}}{39}{section*.29}%
+\contentsline {subsubsection}{Policy $\varphi _{4}$ mitigating attack A4, \emph {Drain Batteries}}{39}{section*.31}%
+\contentsline {subsubsection}{Policy $\varphi _{5}$ mitigating attack A5, \emph {Pressure Limit Violation}}{40}{section*.33}%
+\contentsline {chapter}{\numberline {4}Implementation and Evaluation}{41}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Evaluation Parameters}{42}{section.4.1}%
+\contentsline {chapter}{Appendix}{42}{section.4.1}%
+\contentsline {chapter}{\numberline {A}}{43}{appendix.A}%
+\contentsline {chapter}{Publications}{44}{equation.A.0.1}%
+\contentsline {chapter}{Bibliography}{45}{Item.17}%

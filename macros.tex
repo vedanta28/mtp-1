@@ -1,0 +1,145 @@
+
+\newcommand{\ignore}[1]{{}}
+\newcommand{\SP}[1]{{\textit{\textcolor{blue}{ \small{[#1 -SP-]}}}}}
+\newcommand{\PR}[1]{{\textsf{\color{red} \small{[#1 -PR-]}}}}
+\newcommand{\Abhinandan}[1]{{\textsf{\color{violet} \small{[#1 -Abhinandan-]}}}}
+\newcommand{\violet}[1]{{\color{violet}{#1}}}
+%\newcommand{\sm}[1]{{\textsf{\color{red} \small{[#1 -sm-]}}}}
+%\newcommand{\st}[1]{{\textsf{\color{red} \small{[#1 -st-]}}}}
+%\newcommand{\rvh}[1]{{\textsf{\color{red} \small{[#1 -rvh-]}}}}
+%\newcommand{\ourTool}{Piha\xspace}
+%\newcommand{\simulink}{Simulink\textsuperscript{\textregistered}\xspace}
+\newcommand{\compiler}{Microsoft Visual C++\xspace}
+%\newcommand{\iSignal}{\tau} %internal signal for HA
+%\newcommand{\inSignal}[1]{#1~} %input signal for HA
+%\newcommand{\outSignal}[1]{#1~} %output signal from HA
+
+%\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+%\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+%\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\modified}[1]{\textcolor{red}{#1}}
+%\newcommand{\modified}[1]{{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+%\newcommand{\green}[1]{\textcolor{green}{#1}}
+%%%%%%Prelim%%%%%%%%%%%%%%
+\newcommand{\bbb}{\mathbb{B}}
+\newcommand{\bbn}{\mathbb{N}}
+\newcommand{\bbr}{\mathbb{R}}
+\newcommand{\Rnn}{{\bbr}_{\geq 0}}
+\newcommand{\calL}{{\cal L}}
+\newcommand{\calP}{{\cal P}}
+\newcommand{\calA}{{\cal A}}
+\newcommand{\exec}{\mathit{exec}}
+\newcommand{\true}{\ensuremath{\mathsf{true}}}
+\newcommand{\false}{\ensuremath{\mathsf{false}}}
+\newcommand{\pref}{\preccurlyeq}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%%%%%%Enforcement Problem, Func%%%%%%%%%%%%%%
+\newcommand{\ef}{\ensuremath{E_{\varphi}}}
+\newcommand{\efalgo}{\ensuremath{{E_{\varphi}^*}}}
+\newcommand{\efopt}{\ensuremath{E_{\varphi}\textendash{\mathsf{opt}}}}
+\newcommand{\e}[1]{\ensuremath{E_{{#1}}}}
+\newcommand{\efi}{\ensuremath{E_{I}}}
+\newcommand{\efo}{\ensuremath{E_{O}}}
+\newcommand{\efiopt}{\ensuremath{E_{I}\textendash{\mathsf{opt}}}}
+\newcommand{\efoopt}{\ensuremath{E_{O}\textendash{\mathsf{opt}}}}
+
+\newcommand{\ptick}{\mathsf{ptick}}
+\newcommand{\editI}{\mathsf{editI_{\varphi_I}}}
+\newcommand{\editO}{\mathsf{editO_{\varphi}}}
+\newcommand{\editIaut}{\mathsf{editI_{\calA_{\varphi_I}}}}
+\newcommand{\editOaut}{\mathsf{editO_{\calA_\varphi}}}
+\newcommand{\randEditI}{\mathsf{{nondet}-editI_{\varphi_{I}}}}
+\newcommand{\randEditO}{\mathsf{{nondet}-editO_{\varphi}}}
+\newcommand{\randEditIaut}{\mathsf{{nondet}-editI_{\calA_{\varphi_{I}}}}}
+%\newcommand{\randEditOaut}{\mathsf{{nondet}\textendash editO_{\calA_\varphi}}}
+\newcommand{\randEditOaut}{\mathsf{{nondet}-editO_{\calA_\varphi}}}
+\newcommand{\dist}{\mathsf{dist}}
+
+
+\newcommand{\minEdit}{\mathsf{{minD}}}
+\newcommand{\selectI}{\mathsf{SelectI}}
+\newcommand{\selectO}{\mathsf{SelectO}}
+
+\newcommand{\minEditI}{\mathsf{{minD}\textendash editI_{\varphi_{I}}}}
+\newcommand{\minEditO}{\mathsf{{minD}\textendash editO_{\varphi}}}
+\newcommand{\minEditIaut}{\mathsf{{minD}\textendash editI_{\calA_{\varphi_{I}}}}}
+\newcommand{\minEditOaut}{\mathsf{{minD}\textendash editO_{\calA_\varphi}}}
+
+\newcommand{\readInp}{\mathsf{read\_in\_chan}}
+\newcommand{\readOut}{\mathsf{read\_out\_chan}}
+\newcommand{\release}{\mathsf{release}}
+%\texttt{ptick}
+
+\newcommand{\okI}{\mathit{OK\_solutions_I}}
+\newcommand{\okO}{\mathit{OK\_solutions_O}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%pacemaker example%%%%%%%%%%%%%%%%%
+\newcommand{\AS}{\mathit{AS}}
+\newcommand{\VS}{\mathit{VS}}
+\newcommand{\AP}{\mathit{AP}}
+\newcommand{\VP}{\mathit{VP}}
+\newcommand{\LRI}{\mathit{LRI}}
+\newcommand{\URI}{\mathit{URI}}
+\newcommand{\AVI}{\mathit{AVI}}
+\newcommand{\AEI}{\mathit{AEI}}
+\newcommand{\BCRT}{\mathit{BCRT}}
+\newcommand{\WCRT}{\mathit{WCRT}}
+
+
+\newcommand{\serial}{\Rrightarrow}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\squishlist}{
+ \begin{list}{$\bullet$}
+  { \setlength{\itemsep}{0pt}
+     \setlength{\parsep}{1pt}
+     \setlength{\topsep}{1pt}
+     \setlength{\partopsep}{0pt}
+     \setlength{\leftmargin}{0.9em}
+     \setlength{\labelwidth}{1.5em}
+     \setlength{\labelsep}{0.4em} } }
+\newcommand{\squishend}{
+  \end{list}  }
+
+
+\newenvironment{SingleColFigure}
+{\par\medskip\noindent\minipage{\linewidth}}
+{\endminipage\par\medskip}
+
+\newenvironment{SingleColAlgo}
+%   {\begin{framed}\par\medskip\noindent\minipage{\linewidth}}
+%   {\endminipage\par\medskip\end{framed}}
+{\par\medskip\noindent\minipage{\linewidth}}
+{\endminipage\par\medskip}
+
+%\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{cor}{Corollary}
+\newtheorem{conj}{Conjecture}
+%\theoremstyle{definition}
+%\newtheorem{}{Definition}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newtheorem{remark}{Remark}
+
+
+\definecolor{graphFirst}{RGB}{2,136,209} % Light Blue 700
+\definecolor{graphSecond}{RGB}{211,47,47} % Red 700
+\definecolor{graphThird}{RGB}{245,124,0} % Orange 700
+\definecolor{graphFourth}{RGB}{56,142,60} % Green 700
+\definecolor{graphFifth}{RGB}{81,45,168} % Deep Purple 700
+\definecolor{graphSixth}{RGB}{69,90,100} % Blue Grey 700
+\definecolor{graphSeventh}{RGB}{251,192,45} % Yellow 700
+
+\usetikzlibrary{shapes,backgrounds}
+\usetikzlibrary{arrows,shapes,fit,automata,positioning,decorations,calc}
+\usetikzlibrary{spy,backgrounds}
+\usetikzlibrary{arrows.meta}

@@ -1,0 +1,108 @@
+\begin{tikzpicture}
+	\begin{axis}[
+		%ybar,
+		%bar width=3mm,
+		width=(\linewidth*3/5)-12mm,
+		title={Series Max Tick Time (ns)},
+		xlabel={Number of Policies},
+		height=6cm,
+		legend style={
+			at={(1.05,0.5)},
+			anchor=west,
+		},
+		ylabel={Max Tick Time (ns)},
+		ymin=0,
+		ymax=800,
+		%symbolic x coords={1, 2, 3, 4, 5},
+		xtick={1,2,3,4,5,6,7,8,9},
+		ytick={0, 200, 400, 600, 800}
+		]
+		
+		% Series O0
+		\addplot[
+		graphFirst,
+		] coordinates {
+			(1, 147.4928)
+			(2, 266.4059)
+			(3, 273.4412)
+			(4, 343.0175)
+			(5, 447.7418)
+			(6, 570.3361)
+			(7, 602.0979)
+			(8, 628.9847)
+			(9, 629.4774)
+		};
+		
+		% Series O1
+		\addplot[
+		graphSecond,
+		] coordinates {
+			(1, 026.4867)
+			(2, 046.6082)
+			(3, 047.6715)
+			(4, 063.0939)
+			(5, 083.2637)
+			(6, 101.4633)
+			(7, 106.1005)
+			(8, 133.0757)
+			(9, 147.1069)
+		};
+		
+		% Series O2
+		\addplot[
+		graphThird,
+		] coordinates {
+			(1, 021.7407)
+			(2, 043.9318)
+			(3, 043.0824)
+			(4, 060.1035)
+			(5, 068.9601)
+			(6, 085.1029)
+			(7, 087.1802)
+			(8, 099.5648)
+			(9, 103.1013)
+		};
+		
+		% Series O3
+		\addplot[
+		graphFourth,
+		] coordinates {
+			(1, 022.1482)
+			(2, 039.9431)
+			(3, 046.7428)
+			(4, 059.6679)
+			(5, 068.974)
+			(6, 083.564)
+			(7, 086.0656)
+			(8, 099.3543)
+			(9, 090.4233)
+		};
+	
+		% Series Os
+		\addplot[
+		graphFifth,
+		] coordinates {
+			(1, 025.3804)
+			(2, 050.6582)
+			(3, 050.0723)
+			(4, 077.4881)
+			(5, 087.9223)
+			(6, 101.3406)
+			(7, 107.4833)
+			(8, 113.0186)
+			(9, 122.5363)
+		};
+		
+		%		% This Work (CPSC)
+		%		\addplot[
+		%			graphFifth, fill=graphFifth
+		%		] coordinates {
+			%			(Accuracy, 92.5)
+			%			(Sensitivty, 92)
+			%			(Specificity, 93)
+			%		};
+		
+		\legend{O0, O1, O2, O3, Os}
+		
+	\end{axis}
+\end{tikzpicture}

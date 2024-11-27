@@ -1,0 +1,31 @@
+
+\chapter{Implementation and Evaluation}
+\graphicspath{{Chapter_4/Vector/}{Chapter_4/}}
+
+To assess the effectiveness of the proposed incremental serial composition approach, we developed a straightforward simulator for a multi-drone system. The simulator is based on the structure depicted in Figure~\ref{fig:drone-system}, incorporating a controller, enforcer, and the drone itself. This implementation enables a direct comparison between the traditional monolithic approach and the incremental serial composition method. For evaluation, we intentionally introduce faults into the simulated controller, compelling the enforcer to make consistent edits. This setup allows us to measure and analyze the time required for the enforcer to execute its corrections effectively.
+
+
+The software tool \textit{easy-rte} \cite{8859335} was used to produce enforcers for this implementation. The tool provides support for monolithic composition, which we use to produce our monolithic enforcers. Additionally, \textit{easy-rte-incremental} \cite{10047915} was used to produce the serial implementation.
+
+To ensure the enforcers actively intervene, the controller was intentionally compromised. To illustrate the effect of progressively complex compositions, we began with a single $\varphi_1$ policy, designed to counteract the boundary breach attack (A1) for the first drone. Additional policies, $\varphi_2$, $\varphi_3$, $\varphi_4$, and $\varphi_5$, were then incrementally incorporated, addressing attacks A2, A3, A4, and A5, respectively, across the drones.
+
+Therefore we created five enforcers for both monolithic and serial compositions to satisfy the following:
+\begin{itemize}
+	\item[] $E_{\varphi1}$: enforces $\varphi_1$
+	\item[] $E_{\varphi2}$: enforces $\varphi_1$, and $\varphi_2$
+	\item[] $E_{\varphi3}$: enforces $\varphi_1 $, $ \varphi_2 $, and $\varphi_3$
+	\item[]$E_{\varphi4}$: enforces $\varphi_1 $, $ \varphi_2 $, $ \varphi_3 $, and $ \varphi_4$
+	\item[] $E_{\varphi5}$: enforces $\varphi_1 $, $ \varphi_2 $, $ \varphi_3 $, $ \varphi_4 $, and $ \varphi_{5}$ 
+\end{itemize}
+
+Monolithic compositions were composed into a single policy first and are denoted $\varphi_{1M}$, $\varphi_{2M}$, ..., $\varphi_{55M}$. These are then synthesized into enforcers denoted $E_{\varphi_{1M}}$. Serial compositions are denoted $E_{\varphi_{1S}}$, $E_{\varphi_{2S}}$, ..., $E_{\varphi_{5S}}$.
+
+\section{Evaluation Parameters}
+\rhead{Evaluation Parameters}
+\label{EvaluationParameters}
+
+xmx
+
+
+
+

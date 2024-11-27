@@ -1,0 +1,53 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{tikz}
+\usepackage{times}
+% \usepackage{picins}
+\usepackage{color}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{theorem}
+\usepackage{pgf}
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata,shapes,shadows,calc}
+\usepackage{amsmath,amssymb}
+\usepackage[]{todo}
+
+\usepackage{xspace}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{nicefrac}
+\usepackage{stackengine}
+\usetikzlibrary{automata,positioning}
+\tikzset{initial text={},
+	every state/.style={circle,minimum size=.4cm,draw=black!60,very thick,fill=black!10},
+	secret/.style={minimum size=.6cm,draw=red!50,very thick,fill=red!20,rectangle},
+	%     secret/.style={minimum size=.4cm,draw=red!50,very thick,fill=red!20,rectangle},
+	node distance= 5cm,on grid,auto}
+\newcommand\obullet[1]{\ensurestackMath{\stackon[1pt]{#1}{\mkern2mu\bullet}}}
+\pagestyle{empty}
+\begin{document}
+	\begin{tikzpicture}[->,shorten >=1pt,auto,node distance=3.35cm,
+		semithick,initial where=left, on grid]
+		
+		\tikzstyle{every node}=[font=\scriptsize]
+		\tikzstyle{good state}=[rectangle,thick,draw=blue!75,fill=blue!20,minimum size=5mm]
+		\tikzstyle{good state2}=[rectangle,thick,dashed,draw=blue!75,fill=blue!20,minimum size=5mm]
+		\tikzstyle{bad state}=[circle,thick,draw=red!75,fill=red!20,minimum size=3mm]
+		
+		\node[ state, fill=red!20]         (lv) {$lv$};
+		\node[initial, state, accepting, fill=green!20][left of = lv, xshift=-2em](l0) {$l0$};
+		
+		\path
+		
+		(l0) edge [out=30, in=155]     node[below, xshift=0em, text width=10cm, align=center] {$\mathsf{x\_up}$ $\wedge$ $\mathsf{x\_down}$} (lv)
+		
+		(l0) edge []     node[below, xshift=0em, text width=10cm, align=center] {$\mathsf{y\_up}$ $\wedge$ $\mathsf{y\_down}$} (lv)
+		
+		(l0) edge [out=-30, in=-155]     node[below, xshift=0em, text width=10cm, align=center] {$\mathsf{rpm\_up}$ $\wedge$ $\mathsf{rpm\_down}$} (lv)
+		
+		(lv) edge [loop right] node { $\Sigma$ } (lv) ;
+		
+	\end{tikzpicture}
+\end{document}

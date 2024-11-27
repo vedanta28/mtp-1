@@ -1,0 +1,89 @@
+\begin{tikzpicture}
+	\begin{axis}[
+		ybar,
+		bar width=2mm,
+		width=\linewidth-5mm,
+		title={Monolithic Compiled Size},
+		xlabel={Number of Policies},
+		height=6cm,
+		legend style={
+			at={(0.5,-0.4)},
+			anchor=south,
+			legend columns=-1
+		},
+		ylabel={Binary Size (kB)},
+		ymin=0,
+		ymax=140,
+		%symbolic x coords={1, 2, 3, 4, 5},
+		xtick={1,2,3,4,5},
+		ytick={0, 20, 40, 60, 80, 100, 120, 140}
+		]
+		
+		% Mono O0
+	%	\addplot[
+	%	graphFirst, fill=graphFirst,
+	%	] coordinates {
+	%		(1, 0)
+	%		(2, 0.010)
+	%		(3, 0.020)
+	%		(4, 0.030)
+	%		(5, 0.080)
+	%	};
+		
+		% Mono O1
+		\addplot[
+		graphSecond, fill=graphSecond,
+		] coordinates {
+			(1, 17.1)
+			(2, 17.2)
+			(3, 21.3)
+			(4, 25.4)
+			(5, 126)
+		};
+		
+		% Mono O2
+		\addplot[
+		graphThird, fill=graphThird,
+		] coordinates {
+			(1, 17.1)
+			(2, 17.2)
+			(3, 21.3)
+			(4, 25.4)
+			(5, 94)
+		};
+		
+		% Mono O3
+		\addplot[
+		graphFourth, fill=graphFourth,
+		] coordinates {
+			(1, 17.1)
+			(2, 17.2)
+			(3, 21.3)
+			(4, 33.4)
+			(5, 94)
+		};
+		
+		% Mono Os
+		\addplot[
+		graphFifth, fill=graphFifth,
+		] coordinates {
+			(1, 17.1)
+			(2, 17.2)
+			(3, 17.2)
+			(4, 21.3)
+			(5, 58)
+		};
+		
+		%		% This Work (CPSC)
+		%		\addplot[
+		%			graphFifth, fill=graphFifth
+		%		] coordinates {
+			%			(Accuracy, 92.5)
+			%			(Sensitivty, 92)
+			%			(Specificity, 93)
+			%		};
+		
+		\legend{O1, O2, O3, Os}
+		
+	\end{axis}
+\end{tikzpicture}

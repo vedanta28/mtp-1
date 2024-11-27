@@ -1,0 +1,51 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{tikz}
+\usepackage{times}
+% \usepackage{picins}
+\usepackage{color}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{theorem}
+\usepackage{pgf}
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata,shapes,shadows,calc}
+\usepackage{amsmath,amssymb}
+\usepackage[]{todo}
+
+\usepackage{xspace}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{nicefrac}
+\usepackage{stackengine}
+\usetikzlibrary{automata,positioning}
+\tikzset{initial text={},
+	every state/.style={circle,minimum size=.4cm,draw=black!60,very thick,fill=black!10},
+	secret/.style={minimum size=.6cm,draw=red!50,very thick,fill=red!20,rectangle},
+	%     secret/.style={minimum size=.4cm,draw=red!50,very thick,fill=red!20,rectangle},
+	node distance= 5cm,on grid,auto}
+\newcommand\obullet[1]{\ensurestackMath{\stackon[1pt]{#1}{\mkern2mu\bullet}}}
+\pagestyle{empty}
+\begin{document}
+	\begin{tikzpicture}[->,shorten >=1pt,auto,node distance=3.35cm,
+		semithick,initial where=left, on grid]
+		
+		\tikzstyle{every node}=[font=\scriptsize]
+		\tikzstyle{good state}=[rectangle,thick,draw=blue!75,fill=blue!20,minimum size=5mm]
+		\tikzstyle{good state2}=[rectangle,thick,dashed,draw=blue!75,fill=blue!20,minimum size=5mm]
+		\tikzstyle{bad state}=[circle,thick,draw=red!75,fill=red!20,minimum size=3mm]
+		
+		\node[ state, fill=red!20]         (lv) {$lv$};
+		\node[initial, state, accepting, fill=green!20][left of = lv](l0) {$l0$};
+		
+		\path
+		
+		(l0) edge [yshift=-1.5em]     node[above, xshift=0em, align=center] {$\mathsf{rpm\_up}$ $\wedge$ $\mathsf{rpm\_limit}$} (lv)
+		
+		(l0) edge [loop above] node [text width = 4cm, align=center] {$\Sigma$ / \\ ($\mathsf{rpm\_up}$ $\wedge$ $\mathsf{rpm\_limit})$} (l0)
+
+		(lv) edge [loop above] node { $\Sigma$ } (lv) ;
+		
+	\end{tikzpicture}
+\end{document}

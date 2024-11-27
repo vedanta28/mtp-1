@@ -1,0 +1,108 @@
+\begin{tikzpicture}
+	\begin{axis}[
+		ybar,
+		bar width=0.8mm,
+		width=(\linewidth*3/5)-10mm,
+		title={Series Compiled Size},
+		xlabel={Number of Policies},
+		height=6cm,
+		legend style={
+			at={(1.05,0.5)},
+			anchor=west,
+		},
+		ylabel={Binary Size (kB)},
+		ymin=0,
+		ymax=410,
+		%symbolic x coords={1, 2, 3, 4, 5},
+		xtick={1,2,3,4,5,6,7,8,9},
+		ytick={0, 100, 200, 300, 400}
+		]
+		
+		% Series O0
+		\addplot[
+		graphFirst, fill=graphFirst,
+		] coordinates {
+			(1, 171)
+			(2, 171)
+			(3, 200)
+			(4, 224)
+			(5, 320)
+			(6, 329)
+			(7, 353)
+			(8, 378)
+			(9, 403)
+		};
+		
+		% Series O1
+		\addplot[
+		graphSecond, fill=graphSecond,
+		] coordinates {
+			(1, 167)
+(2, 171)
+(3, 196)
+(4, 220)
+(5, 320)
+(6, 321)
+(7, 346)
+(8, 370)
+(9, 395)
+		};
+		
+		% Series O2
+		\addplot[
+		graphThird, fill=graphThird,
+		] coordinates {
+			(1, 167)
+(2, 171)
+(3, 196)
+(4, 220)
+(5, 317)
+(6, 321)
+(7, 346)
+(8, 370)
+(9, 399)
+		};
+		
+		% Series O3
+		\addplot[
+		graphFourth, fill=graphFourth,
+		] coordinates {
+			(1, 171)
+(2, 172)
+(3, 196)
+(4, 220)
+(5, 317)
+(6, 321)
+(7, 346)
+(8, 370)
+(9, 399)
+		};
+		
+		% Series Os
+		\addplot[
+		graphFifth, fill=graphFifth,
+		] coordinates {
+			(1, 166)
+(2, 166)
+(3, 195)
+(4, 219)
+(5, 316)
+(6, 320)
+(7, 375)
+(8, 369)
+(9, 395)
+		};
+		
+		%		% This Work (CPSC)
+		%		\addplot[
+		%			graphFifth, fill=graphFifth
+		%		] coordinates {
+			%			(Accuracy, 92.5)
+			%			(Sensitivty, 92)
+			%			(Specificity, 93)
+			%		};
+		
+		\legend{O0, O1, O2, O3, Os}
+		
+	\end{axis}
+\end{tikzpicture}

@@ -1,0 +1,80 @@
+\begin{tikzpicture}
+	\begin{axis}[
+		%\pgfplotsset{compat=newest}
+		%ybar,
+		%bar width=3mm,
+		width=\linewidth-10mm,
+		%enlarge x limits=0.25,
+		height=6cm,
+		title={Monolithic Max Tick Time (ns)},
+		ylabel={Max Tick Time (ns)},
+		xlabel={Number of Policies},
+		ymin=0,
+		ymax=175e-3,
+		%symbolic x coords={1, 2, 3, 4, 5},
+		legend style={
+			at={(0.5,-.4)},
+			anchor=south,
+			legend columns=-1
+		},
+		xtick={1,2,3,4,5},
+		ytick={0, 50e-3, 100e-3, 150e-3}
+		]
+		
+		% Mono O1
+		\addplot[
+		graphSecond,
+		] coordinates {
+			(1, 6.2e-3)
+			(2, 8.9e-3)
+			(3, 10.2e-3)
+			(4, 24.4e-3)
+			(5, 148.1e-3)
+		};
+		
+		% Mono O2
+		\addplot[
+		graphThird,
+		] coordinates {
+			(1, 5.2e-3)
+			(2, 8.8e-3)
+			(3, 8.1e-3)
+			(4, 12.5e-3)
+			(5, 61.8e-3)
+		};
+		
+		% Mono O3
+		\addplot[
+		graphFourth,
+		] coordinates {
+			(1, 4.5e-3)
+			(2, 12.6e-3)
+			(3, 10.3e-3)
+			(4, 10.3e-3)
+			(5, 58.2e-3)
+		};
+		
+		% Mono Os
+		\addplot[
+		graphFifth,
+		] coordinates {
+			(1, 5.9e-3)
+			(2, 8.2e-3)
+			(3, 10.1e-3)
+			(4, 12.8e-3)
+			(5, 64.7e-3)
+		};
+		
+		%		% This Work (CPSC)
+		%		\addplot[
+		%			graphFifth, fill=graphFifth
+		%		] coordinates {
+			%			(Accuracy, 92.5)
+			%			(Sensitivty, 92)
+			%			(Specificity, 93)
+			%		};
+		
+		\legend{O1, O2, O3, Os}
+		
+	\end{axis}
+\end{tikzpicture}

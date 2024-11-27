@@ -1,0 +1,88 @@
+\begin{tikzpicture}
+	\begin{axis}[
+		%ybar,
+		%bar width=3mm,
+		width=(\linewidth*2/5)-10mm,
+		title={Monolithic Compile Time},
+		xlabel={Number of Policies},
+		height=6cm,
+		legend style={
+			at={(1.05,0.5)},
+			anchor=west,
+		},
+		ylabel={Average Compile Time (s)},
+		ymin=0,
+		ymax=120,
+		%symbolic x coords={1, 2, 3, 4, 5},
+		xtick={1,2,3,4,5},
+		ytick={0, 20, 40, 60, 80, 100, 120}
+		]
+		
+		% Mono O0
+		\addplot[
+		graphFirst,
+		] coordinates {
+			(1, 0.274666667)
+			(2, 0.342333333)
+			(3, 0.685)
+			(4, 0.993)
+			(5, 10.930)
+		};
+		
+		% Mono O1
+		\addplot[
+		graphSecond,
+		] coordinates {
+			(1, 0.311666667)
+			(2, 0.334666667)
+			(3, 0.601)
+			(4, 1.194)
+			(5, 113.871)
+		};
+		
+		% Mono O2
+		\addplot[
+		graphThird,
+		] coordinates {
+			(1, 0.327666667)
+			(2, 0.343666667)
+			(3, 0.627)
+			(4, 1.275)
+			(5, 96.304)
+		};
+		
+		% Mono O3
+		\addplot[
+		graphFourth,
+		] coordinates {
+			(1, 0.305)
+			(2, 0.361666667)
+			(3, 0.647)
+			(4, 1.457)
+			(5, 99.151)
+		};
+		
+		% Mono Os
+		\addplot[
+		graphFifth,
+		] coordinates {
+			(1, 0.306666667)
+			(2, 0.317666667)
+			(3, 0.625)
+			(4, 1.046)
+			(5, 103.677)
+		};
+		
+		%		% This Work (CPSC)
+		%		\addplot[
+		%			graphFifth, fill=graphFifth
+		%		] coordinates {
+			%			(Accuracy, 92.5)
+			%			(Sensitivty, 92)
+			%			(Specificity, 93)
+			%		};
+		
+		%\legend{O0, O1, O2, O3, Os}
+		
+	\end{axis}
+\end{tikzpicture}
