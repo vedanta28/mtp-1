@@ -2,30 +2,22 @@
 \addvspace {10\p@ }
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {SA ${\cal A}_{P}$. }}}{7}{subfigure.1.1}%
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Input SA from ${\cal A}_{P}$. }}}{7}{subfigure.1.2}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Safety automaton for $S_1$ and $S_2$.}}{16}{figure.caption.15}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {SA ${\cal A}_{S_1}$. }}}{16}{subfigure.2.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {SA ${\cal A}_{S_2}$. }}}{16}{subfigure.2.2}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces ${\cal A}_{S_1\cap S_2}$: Product of Automaton $S_1$ and $S_2$}}{17}{figure.caption.16}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Policy $\varphi _1\cap \varphi _2$ is non-enforceable.}}{19}{figure.caption.18}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {SA defining $\varphi _1$- Enforceable \footnotemark }}}{19}{subfigure.4.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {SA defining $\varphi _2$- Enforceable \footnotemark }}}{19}{subfigure.4.2}%
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {SA defining $\varphi _1$ $\cap $ $\varphi _2$}}}{19}{subfigure.4.3}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Incremental enforcement via serial composition}}{21}{figure.2.5}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Safety automaton for $S_1$ and $S_2$.}}{22}{figure.caption.20}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {SA ${\cal A}_{S_1}$. }}}{22}{subfigure.6.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {SA ${\cal A}_{S_2}$. }}}{22}{subfigure.6.2}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Incremental Enforcement via Serial Composition using Select functions}}{26}{figure.2.7}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Safety automaton for $S_1$ and $S_2$.}}{12}{figure.caption.15}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {SA ${\cal A}_{S_1}$. }}}{12}{subfigure.2.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {SA ${\cal A}_{S_2}$. }}}{12}{subfigure.2.2}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces ${\cal A}_{S_1\cap S_2}$: Product of Automaton $S_1$ and $S_2$}}{13}{figure.caption.16}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Incremental Enforcement via Serial Composition using Select functions}}{15}{figure.2.4}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces DARP+STC Proposed Approach, sample execution with 24x24 grid size, 9 robots and 100 obstacles \cite {kapoutsisdarp}}}{30}{figure.caption.23}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Initial cells discretization, robots' cell, and obstacles }}}{30}{subfigure.1.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {DARP outcome - robots’ exclusive areas }}}{30}{subfigure.1.2}%
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Constructing Minimum Spanning Trees for each one of the robots sets }}}{30}{subfigure.1.3}%
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Final Paths, designed to circumnavigate the MSTs }}}{30}{subfigure.1.4}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces System diagram of incremental enforcement for a drone swarm.}}{34}{figure.caption.24}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Automaton for policy $\varphi _{1}$ which prevents a drone from breaching its boundary}}{38}{figure.caption.26}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Automaton for policy $\varphi _{2}$ which prevents overwhelming of the inputs}}{39}{figure.caption.28}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Automaton for policy $\varphi _{3}$ which ensures safe transitions based on timeout and ascent conditions.}}{39}{figure.caption.30}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Automaton for policy $\varphi _{4}$ which ensures safe RPM limits to prevent battery drain.}}{40}{figure.caption.32}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Automaton for policy $\varphi _{5}$ which ensures ascent is triggered when the pressure limit is reached.}}{40}{figure.caption.34}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces DARP+STC Proposed Approach, sample execution with 24x24 grid size, 9 robots and 100 obstacles \cite {kapoutsisdarp}}}{19}{figure.caption.21}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Initial cells discretization, robots' cell, and obstacles }}}{19}{subfigure.1.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {DARP outcome - robots’ exclusive areas }}}{19}{subfigure.1.2}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Constructing Minimum Spanning Trees for each one of the robots sets }}}{19}{subfigure.1.3}%
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Final Paths, designed to circumnavigate the MSTs }}}{19}{subfigure.1.4}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces System diagram of incremental enforcement for a drone swarm.}}{23}{figure.caption.22}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Automaton for policy $\varphi _{1}$ which prevents a drone from breaching its boundary}}{27}{figure.caption.24}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Automaton for policy $\varphi _{2}$ which prevents overwhelming of the inputs}}{28}{figure.caption.26}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Automaton for policy $\varphi _{3}$ which ensures safe transitions based on timeout and ascent conditions.}}{28}{figure.caption.28}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Automaton for policy $\varphi _{4}$ which ensures safe RPM limits to prevent battery drain.}}{29}{figure.caption.30}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Automaton for policy $\varphi _{5}$ which ensures ascent is triggered when the pressure limit is reached.}}{29}{figure.caption.32}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

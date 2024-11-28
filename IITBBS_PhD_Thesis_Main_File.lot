@@ -1,10 +1,9 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Functional definition example}}{16}{table.caption.14}%
-\contentsline {table}{\numberline {2.2}{\ignorespaces Example illustrating behavior of enforcer for ${\cal A}_{S_1 \cap S_2}$}}{17}{table.caption.17}%
-\contentsline {table}{\numberline {2.3}{\ignorespaces Serial composition using Definition \ref {def:serialComp}}}{22}{table.caption.19}%
-\contentsline {table}{\numberline {2.4}{\ignorespaces Serial composition scheme using Select()-input enforcement}}{25}{table.caption.21}%
-\contentsline {table}{\numberline {2.5}{\ignorespaces Serial composition scheme using Select()-output enforcement}}{25}{table.caption.22}%
+\contentsline {table}{\numberline {2.1}{\ignorespaces Functional definition example}}{11}{table.caption.14}%
+\contentsline {table}{\numberline {2.2}{\ignorespaces Example illustrating behavior of enforcer for ${\cal A}_{S_1 \cap S_2}$}}{13}{table.caption.17}%
+\contentsline {table}{\numberline {2.3}{\ignorespaces Serial composition scheme using Select()-input enforcement}}{15}{table.caption.19}%
+\contentsline {table}{\numberline {2.4}{\ignorespaces Serial composition scheme using Select()-output enforcement}}{15}{table.caption.20}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

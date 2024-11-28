@@ -68,13 +68,13 @@ $\mathcal{A}$ is \textit{complete} if $\forall q \in Q, \forall a \in \Sigma, \e
 A word $\sigma$ is \textit{accepted} by $\mathcal{A}$ if there exists $q \in Q \setminus \{q_v\}$ such that $q_0
 \xrightarrow{\sigma} q$.
 The set of all words accepted by $\mathcal{A}$ is denoted as $\mathcal{L}(\mathcal{A})$.
-
+\ignore{
 \begin{remark}
 	We can first determinize and complete a non-deterministic or incomplete automaton provided by the user.
 	We further assume that $Q$ has no (redundant) locations that are
 	unreachable from $q_0$. Hence, in the rest of this work, $\varphi$ is a safety policy specified as deterministic and complete SA $\calA_\varphi = (Q, q_0, q_v, \Sigma, \xrightarrow{})$. 
 \end{remark}
-
+}
 The enforcer must first alter inputs from the environment in each step according to policy $\varphi$ specified as SA $\calA_\varphi$ according to the causality requirement.
 As a result, we must examine the input policy obtained by projecting
 on inputs from $\calA_\varphi$. 
@@ -113,7 +113,7 @@ on inputs from $\calA_\varphi$.
 	The input SA for the SA in Figure~\ref{fig:prop1} defining policy $P$ is shown in Figure~\ref{fig:prop1Inp}.
 	Though the SA $\calA_\varphi$ is deterministic, the input SA $\calA_{\varphi_I}$ may be non-deterministic. This is the case with the considered example as shown in Figure~\ref{fig:prop1Inp}.
 \end{example} 
-
+\ignore{
 \begin{lemma}
 	\label{lem:inputProp}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -123,10 +123,12 @@ on inputs from $\calA_\varphi$.
 	\item[2] $\forall x \in \Sigma_I, \forall q, q'\in Q: q \xrightarrow{x}_I q' \implies \exists y\in\Sigma_O: q\xrightarrow{(x,y)}q'$.
 	\squishend
 \end{lemma}
+
 Lemma~\ref{lem:inputProp} is an immediate consequence from Definitions~\ref{def:SA} and~\ref{def:inp:prop:proj:def}.
 Policy 1 states that if there is a transition from state $q\in Q$ to state $q' \in Q$  in the automaton $\calA_\varphi$ upon input-output event $(x,y)\in \Sigma$, then there is a transition from state $q$ to state $q'$ in the input automaton $\calA_{\varphi_I}$ upon the input event $x\in\Sigma_I$.
-Policy 2 states that if there is a transition from state $q\in Q$ to state $q' \in Q$ upon input event $x\in\Sigma_I$, then there must be an output event $y\in\Sigma_O$ s.t. there is a transition from state $q$ to state $q'$ upon event $(x,y)$ in the automaton $\calA_\varphi$. 
+Policy 2 states that if there is a transition from state $q\in Q$ to state $q' \in Q$ upon input event $x\in\Sigma_I$, then there must be an output event $y\in\Sigma_O$ s.t. there is a transition from state $q$ to state $q'$ upon event $(x,y)$ in the automaton $\calA_\varphi$.} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ignore{
 \begin{definition}[Product of SA]
 	\label{def:product}
 	Given two SA $\calA_{\varphi_1}=(Q^1, q^1_0, q^1_v, \Sigma, \rightarrow_1)$, and $\calA_{\varphi_2}=(Q^2, q^2_0, q^2_v, \Sigma, \rightarrow_2)$, their product SA $\calA_{\varphi_1} \times \calA_{\varphi_2} = (Q, q_0, q_v, \Sigma, \rightarrow)$ where $Q = Q^1 \times Q^2$, $q_0 = (q^1_0, q^2_0)$, $q_v =  (q^1_v, q^2_v)$, and the transition relation $\rightarrow \subseteq Q \times \Sigma \times Q$ with $((q^1, q^2), a, (q'^1, q'^2)) \in \rightarrow$  if  $(q^1, a, q'^1) \in \rightarrow^1$ and  $(q^2, a, q'^2) \in \rightarrow_2$. 
@@ -139,10 +141,11 @@ Policy 2 states that if there is a transition from state $q\in Q$ to state $q' \
 \end{definition}
 
 The product of SAs is useful to enforce multiple policies using the monolithic approach by first constructing a product of the given SAs. Given two deterministic and complete SAs $\calA_{\varphi_1}$ and $\calA_{\varphi_2}$, the product SA $\calA_{\varphi_1} \times \calA_{\varphi_2}$ is deterministic and complete which recognizes the language 
-$\calL(\calA_{\varphi_2}) \cap \calL(\calA_{\varphi_2})$.
+$\calL(\calA_{\varphi_2}) \cap \calL(\calA_{\varphi_2})$.}
 %\SP{We may add a couple of lines of expl. of the product def later if space permits.}
 %%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ignore{
 \subsection{Edit Functions}
 \label{sec:prelim:re}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -183,7 +186,7 @@ the set of output events $y$ in $\Sigma_O$ permitting to reach a state in $Q\set
 For example, consider policy $P$ defined by the automaton in Figure~\ref{fig:prop1}.
 We have $\editOaut(q_0, 01) = \{0\}$.
 
-If $\editOaut(q,x)$ is not empty, then $\randEditOaut(q, x)$ returns a random element from $\editOaut(q,x)$, and if $\editOaut(q,x)$ is empty $\randEditOaut(q, x)$ is undefined.
+If $\editOaut(q,x)$ is not empty, then $\randEditOaut(q, x)$ returns a random element from $\editOaut(q,x)$, and if $\editOaut(q,x)$ is empty $\randEditOaut(q, x)$ is undefined.}
 %
 %For example, consider property $S_1$ defined by the automaton in Figure~\ref{fig:prop1}.
 %We have $\editOaut(q_0, 11) =  \{00,01\}$.
@@ -204,7 +207,7 @@ If $\editOaut(q,x)$ is not empty, then $\randEditOaut(q, x)$ returns a random el
 	Given $q\in Q$, $x\in\Sigma_I$ and $y\in\Sigma_O$, if $\editOaut(q,x)$ is non-empty, then $\minEditOaut(q, x, y)$ returns an event from $\editOaut(q,x)$ with minimal distance w.r.t $y$, and is undefined if $\editOaut(q,x)$ is empty.
 }
 %
-\squishend
+%\squishend
 
 \subsection{Runtime Enforcement for Synchronous Programs}
 \label{sec:problemDef}
@@ -293,6 +296,7 @@ This means that when no modification is required to meet the policy $\varphi$, t
 After executing function $\ptick$ with the transformed input $x'$, the enforcer reads and transforms output $y\in \Sigma_O$, which is the program's output, to generate the transformed output $y'$ using $\editO$.
 \squishend
 %%%%%%%%%%%%%%%%%%
+\ignore{
 \begin{remark}
 	\label{rem:edt}
 	After reading input-output sequence $\sigma \in \Sigma^*$, let $\ef(\sigma)$ be the input-output sequence produced as output by the enforcer for $\varphi$.
@@ -306,7 +310,8 @@ After executing function $\ptick$ with the transformed input $x'$, the enforcer 
 	Consider another new event $(11,0)$, and $\ef(\sigma)\cdot(11,0)$ does not satisfy $\varphi$, and the enforcer thus has to alter this new event $(11,0)$.
 	We have $\ef(\sigma)_I= 10\cdot01$, and since $\editI(10\cdot01) = \{00,01,10\}$ the enforcer can choose any element from this set as the transformed input.
 \end{remark}
-
+}
+\ignore{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{definition}[Enforceability]
 	\label{def:Enforceability}
@@ -319,7 +324,7 @@ After executing function $\ptick$ with the transformed input $x'$, the enforcer 
 	Not all policies are enforceable,
 	even if we restrict ourselves to prefix-closed safety policies as is shown and illustrated in \cite{spin17}. 
 \end{remark}	
-
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{remark}[Condition for enforceability]
 	\label{rem:nonEnf}
@@ -389,6 +394,7 @@ The enforcement function $\ef$ is made up of two functions: $\efi$ and $\efo$. $
 \end{definition}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ignore{
 The function $\ef$ accepts a word over $\Sigma^*$ and outputs another word over $\Sigma^*$.
 We have $\sigma_I \in \Sigma_I^*$ is the projection of $\sigma$ on inputs, and $\sigma_O \in \Sigma_O^*$ is the projection of $\sigma$ on outputs, for a word $\sigma\in\Sigma^*$.
 The result of function $\efo$ is the output of the enforcement function $\ef$, which is defined through two functions\blue{,} $\efi$ and $\efo$.
@@ -429,7 +435,7 @@ $\randEditO(\efo(\sigma_I,\sigma_O), x)$ outputs $y'\in \Sigma_O$ such that  $\v
 	$(\ref{eq:tr})$, $(\ref{eq:mono})$, $(\ref{eq:inst})$, and $(\ref{eq:ca})$ constraints (Definition $\ref{def-E-func-constraints}$).
 \end{remark}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+}
 %
 \begin{table}[t]
 	%\vspace{-1em}
@@ -561,23 +567,23 @@ an enforcer for $\varphi$ using the approach described in Section \ref{sec:func:
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\begin{theorem}[Enforceability using the monolithic approach]
+\begin{remark}[Enforceability using the monolithic approach]
 	\label{theorem:enforceability-monolithic}
 	Consider two policies $\varphi_1$, $\varphi_2$ defined as SA, and $\varphi = \varphi_1 \cap \varphi_2$.
 	
 	If policy $\varphi_1$  or policy $\varphi_2$ is non-enforceable, then $\varphi_1 \cap \varphi_2$ is non-enforceable.
 	%
 	
-	The proof of Theorem \ref{theorem:enforceability-monolithic} is given in Appendix \ref{proof:enforceability-monolithic}.
+%	The proof of Theorem \ref{theorem:enforceability-monolithic} is given in Appendix \ref{proof:enforceability-monolithic}.
 	%
 	%\SP{We may have to add a brief justification/reasoning for the same.} \Abhinandan{kindly check}
 	%This is very much intuitive. If $\varphi_1$  or property $\varphi_2$ is non-enforceable, then there would be no path to an accepting location from a designated location in the SA for any input event. As a result, as per the Definition \ref{def:product}, the product SA will contain a transition that will lead to violating state for any input. Then $\varphi_1 \cap \varphi_2$ is non-enforceable.
-\end{theorem}	
+\end{remark}	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \begin{remark}[Enforceability using the monolithic approach]
-	Though policies $\varphi_1$ and $\varphi_2$ are enforceable individually, policy $\varphi_1 \cap \varphi_2$ may not be enforceable, as illustrated in the following example.
+	Though policies $\varphi_1$ and $\varphi_2$ are enforceable individually, policy $\varphi_1 \cap \varphi_2$ may not be enforceable, as illustrated in the following example.\todoAA{cite incremental paper here}
 \end{remark}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
@@ -596,7 +602,7 @@ an enforcer for $\varphi$ using the approach described in Section \ref{sec:func:
 } 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-
+\ignore{
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}%
@@ -616,8 +622,9 @@ an enforcer for $\varphi$ using the approach described in Section \ref{sec:func:
 	\vspace{2em}
 \end{figure}
 \footnotetext[2]{Here, $\Sigma = \{(0,0), (0,1), (1,0), (1,1)\}$. So $\Sigma \setminus (1,1) $ = $\{(0,0), (0,1), (1,0)\}$.}
-\footnotetext[3]{Here, $\Sigma = \{(0,0), (0,1), (1,0), (1,1)\}$. So $\Sigma \setminus (0,0) $ = $\{ (0,1), (1,0), (1,1)\}$.}
+\footnotetext[3]{Here, $\Sigma = \{(0,0), (0,1), (1,0), (1,1)\}$. So $\Sigma \setminus (0,0) $ = $\{ (0,1), (1,0), (1,1)\}$.}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ignore{
 \begin{example}[Monolithic approach does not always work]
 	Consider the two policies shown in Figure \ref{fig:nonEnf1}. Here $I= \{0,1\}$ and $O = \{ 0,1 \}$. Though they are enforceable individually, the policy that we obtain by taking the product of both the SA $\varphi_1 \cap \varphi_2$ is not enforceable. 
 	Suppose that the first event is $(1,1)$, the output of the enforcer will be $(1,1)$, and the state of the product automaton will be updated to $(q_1,l_1)$. When in state $(q_1,l_1)$, whatever may be the input event, it is not possible to correct it (as there will be no path to an accepting state from the state $(q_1,l_1)$ in the product automaton). 
@@ -640,8 +647,9 @@ In our framework, since the framework allows editing of events, and since enforc
 \squishend
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Thus we need to revisit the definition of the enforcement function, which will also be suitable for incremental enforcement schemes.
+Thus we need to revisit the definition of the enforcement function, which will also be suitable for incremental enforcement schemes.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ignore{
 \subsection{Incremental composition of security enforcers} 
 \label{sec:serial}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -888,10 +896,10 @@ In this section, we have seen that the enforcement function in Definition \ref{d
 
 We thus revisit the incremental security enforcement scheme in the next section, to propose an incremental scheme that can tackle all the enforceable properties.
 
-
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Revisiting Incremental Security Enforcement  Scheme}
+\section{Incremental Safety Enforcement Using Select}
 \label{sec:new:def}
 %(its corresponding enforcement algorithm given in Definition \ref{def:Enforceability})
 In this section we propose an incremental composition scheme. First, we define the following Select functions and later present how the compositional scheme can be defined using the Select functions. 
@@ -1082,7 +1090,7 @@ Let us consider the following example to understand this further.
 	Also, when we compose input and output enforcers for these policies in series as per Definition \ref{def:serialComp2}, the final output obtained does satisfy policy $S_1 \cap S_2$. For example consider the word $(100,1) \cdot (110,1) \cdot (011,0)$ to be processed incrementally is shown in Tables \ref{table:EgSerialDef21} and \ref{table:EgSerialDef22}. Whenever any input is given, the MinD() always selects a valid element to input to the output enforcement function, always satisfying all the policies.
 \end{example}
 
-\begin{theorem}[Serial composition using select]
+\begin{remark}[Serial composition using select]
 	\label{theorem:serial-composition-as-enforcer}
 	%	\SP{IMPORTANT: We must be adding about this important result here as a theorem and briefly justify the same:}
 	
@@ -1091,9 +1099,9 @@ Let us consider the following example to understand this further.
 	{
 		If policy $\varphi$ is enforceable, then $\e{\varphi_1} \serial \e{\varphi_2}$ as per Definition \ref{def:serialComp2} is an enforcer for $\varphi$ (satisfies all the constraints as per Definition \ref{def-E-func-constraints}). 
 	}
-\end{theorem}
+\end{remark}
 The proof of Theorem \ref{theorem:serial-composition-as-enforcer} is given in Appendix \ref{proof:serial-composition-as-enforcer}.The proof is based on induction on the length of the input word $\sigma$.
-
+\ignore{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{remark}
 	
@@ -1109,7 +1117,7 @@ The proof of Theorem \ref{theorem:serial-composition-as-enforcer} is given in Ap
 	The order in which the input (resp. output) enforcers are composed, does not affect the final outcome in the proposed incremental enforcement approach. From the definition \ref{def:serialComp2}, we can see that each enforcer from the input set computes the set of all valid events w.r.t its policy, which is fed to the next enforcer in the sequence. The output set produced by the last enforcer in the sequence satisfies all the policies from which one element is chosen by MinD. Thus the order of input (resp. output) enforcers do not matter
 	in the proposed incremental enforcement scheme.
 \end{remark}
-
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ignore{
 	
